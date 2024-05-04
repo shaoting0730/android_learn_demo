@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical"
+    >
+
+    <Button
+        android:text="get同步请求"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:onClick="getSync"
+        />
+
+    <Button
+        android:text="get异步请求"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:onClick="getAsync"
+        />
+
+    <Button
+        android:text="post同步请求"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:onClick="postSync"
+        />
+
+    <Button
+        android:text="post同步请求"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:onClick="postAsync"
+        />
+
+</LinearLayout>
