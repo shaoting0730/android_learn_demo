@@ -1,6 +1,5 @@
 package com.example.firstapp.activity;
 
-import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.util.Log;
@@ -57,7 +56,9 @@ public class LoginActivity extends BaseActivity {
         Api.config("post",params).postRequest(this, new ApiCallback() {
             @Override
             public void onSuccess(String res) {
+//                showToastSync(res);
                 Log.i("成功", "onSuccess: "+res);
+                saveStringToSp("'token'","token_value");
             }
 
             @Override

@@ -36,11 +36,13 @@
                 android:src="@mipmap/account" />
 
             <EditText
+                android:id="@+id/et_account"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/dimen_20dp"
                 android:background="@null"
                 android:hint="@string/account_hint"
+                android:maxLines="1"
                 android:textColor="#000000"
                 android:textColorHint="#bcbcbc"
                 android:textSize="@dimen/size_18sp" />
@@ -66,21 +68,25 @@
                 android:src="@mipmap/pwd" />
 
             <EditText
+                android:id="@+id/et_psw"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/dimen_20dp"
                 android:background="@null"
                 android:hint="@string/pwd_hint"
+                android:inputType="textPassword"
+                android:maxLines="1"
                 android:textColor="#000000"
                 android:textColorHint="#bcbcbc"
                 android:textSize="@dimen/size_18sp" />
 
         </LinearLayout>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center_vertical"
             android:layout_marginTop="10dp"
+            android:gravity="center_vertical"
             android:orientation="horizontal">
 
             <ImageView
@@ -89,11 +95,14 @@
                 android:src="@mipmap/pwd" />
 
             <EditText
+                android:id="@+id/et_psw_again"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/dimen_20dp"
                 android:background="@null"
                 android:hint="@string/pwd_hint_again"
+                android:maxLines="1"
+                android:inputType="textPassword"
                 android:textColor="#000000"
                 android:textColorHint="#bcbcbc"
                 android:textSize="@dimen/size_18sp" />
@@ -103,6 +112,7 @@
     </LinearLayout>
     <!--    登录按钮-->
     <Button
+        android:id="@+id/btn_register"
         android:layout_width="match_parent"
         android:layout_height="@dimen/dimen_55dp"
         android:layout_alignParentBottom="true"
