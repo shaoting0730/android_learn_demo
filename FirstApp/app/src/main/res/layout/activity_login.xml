@@ -36,6 +36,7 @@
                 android:src="@mipmap/account" />
 
             <EditText
+                android:id="@+id/et_account"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/dimen_20dp"
@@ -66,6 +67,7 @@
                 android:src="@mipmap/pwd" />
 
             <EditText
+                android:id="@+id/et_psw"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/dimen_20dp"
@@ -80,6 +82,7 @@
     </LinearLayout>
     <!--    登录按钮-->
     <Button
+        android:id="@+id/btn_login"
         android:layout_width="match_parent"
         android:layout_height="@dimen/dimen_55dp"
         android:layout_alignParentBottom="true"
