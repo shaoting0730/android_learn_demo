@@ -36,7 +36,8 @@ public class TabBarActivity extends BaseActivity implements View.OnClickListener
         tabMineImg = findViewById(R.id.mine_img);
         tabMineText = findViewById(R.id.mine_text);
         tabHomeImg.setBackgroundResource(R.mipmap.home_selected);
-        tabHomeText.setTextColor(Color.rgb(255, 0, 0));
+        tabHomeText.setTextColor(Color.rgb(0, 0, 255));
+        tabMineText.setTextColor(Color.rgb(0, 0, 0));
 
 
         findViewById(R.id.home).setOnClickListener(this);
@@ -100,6 +101,6 @@ public class TabBarActivity extends BaseActivity implements View.OnClickListener
         tabMineText.setTextColor(Color.rgb(0, 0, 0));
 
         imgView.setBackgroundResource(change);
-        textView.setTextColor(Color.rgb(255, 0, 0));
+        textView.setTextColor(Color.rgb(0, 0, 255));
     }
 }
