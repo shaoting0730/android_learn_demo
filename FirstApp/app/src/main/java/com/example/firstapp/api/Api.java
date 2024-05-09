@@ -3,6 +3,7 @@ package com.example.firstapp.api;
 import android.content.Context;
 import android.util.Log;
 
+import com.example.firstapp.util.ProgressDialogUtils;
 import com.squareup.okhttp.Call;
 import com.squareup.okhttp.Callback;
 import com.squareup.okhttp.MediaType;
@@ -46,16 +47,19 @@ public class Api {
         //第四步创建call回调对象
         final Call call = client.newCall(request);
         //第五步发起请求
+        ProgressDialogUtils.showProgressDialog(context,"加载中");
         call.enqueue(new Callback() {
             @Override
             public void onFailure(Request request, IOException e) {
                 Log.e("onFailure",e.getMessage());
+                ProgressDialogUtils.hideProgressDialog();
                 callback.onFailure(e);
             }
             @Override
             public void onResponse(Response response) throws IOException {
               Log.e("onSuccess","成功了");
-              callback.onSuccess(response.body().string());
+                ProgressDialogUtils.hideProgressDialog();
+                callback.onSuccess(response.body().string());
             }
         });
     }
