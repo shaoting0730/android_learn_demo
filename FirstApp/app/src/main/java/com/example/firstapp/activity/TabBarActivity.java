@@ -84,7 +84,7 @@ public class TabBarActivity extends BaseActivity implements View.OnClickListener
                 } else {
                     fragmentTransaction.show(mineFragment);
                 }
-                changeSelectTabAction(R.mipmap.collect_selected, tabMineImg, tabMineText);
+                changeSelectTabAction(R.mipmap.mine_selected, tabMineImg, tabMineText);
                 break;
             default:
                 break;
@@ -95,7 +95,7 @@ public class TabBarActivity extends BaseActivity implements View.OnClickListener
     private void changeSelectTabAction(int change, TextView imgView,
                                        TextView textView) {
         tabHomeImg.setBackgroundResource(R.mipmap.home_unselect);
-        tabMineImg.setBackgroundResource(R.mipmap.collect_unselect);
+        tabMineImg.setBackgroundResource(R.mipmap.mine_unselect);
 
         tabHomeText.setTextColor(Color.rgb(0, 0, 0));
         tabMineText.setTextColor(Color.rgb(0, 0, 0));

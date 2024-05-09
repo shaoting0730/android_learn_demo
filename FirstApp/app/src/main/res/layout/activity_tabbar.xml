@@ -29,14 +29,14 @@
             >
             <TextView
                 android:id="@+id/home_img"
-                android:layout_width="38dp"
-                android:layout_height="38dp"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
                 android:background="@mipmap/home_selected"
                 />
 
             <TextView
                 android:id="@+id/home_text"
-                android:layout_width="38dp"
+                android:layout_width="30dp"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/home_img"
                 android:gravity="center"
@@ -53,14 +53,14 @@
             >
             <TextView
                 android:id="@+id/mine_img"
-                android:layout_width="38dp"
-                android:layout_height="38dp"
-                android:background="@mipmap/collect_unselect"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@mipmap/mine_unselect"
                 />
             <TextView
                 android:id="@+id/mine_text"
                 android:layout_below="@id/mine_img"
-                android:layout_width="38dp"
+                android:layout_width="30dp"
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:text="@string/mine_tabBar_title"
