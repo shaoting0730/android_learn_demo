@@ -62,6 +62,7 @@ public class RegisterActivity extends BaseActivity {
         Api.config("post",params).postRequest(this, new ApiCallback() {
             @Override
             public void onSuccess(String res) {
+                navigateTo(LoginActivity.class);
                 showToastSync("注册成功，请登录");
             }
 

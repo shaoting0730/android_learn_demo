@@ -7,4 +7,6 @@
     <string name="pwd_hint_again">请再一次输入密码</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="home_tabBar_title">首页</string>
+    <string name="mine_tabBar_title">我的</string>
 </resources>

@@ -58,7 +58,8 @@ public class LoginActivity extends BaseActivity {
             public void onSuccess(String res) {
 //                showToastSync(res);
                 Log.i("成功", "onSuccess: "+res);
-                saveStringToSp("'token'","token_value");
+                saveStringToSp("'token'","token_value");  // 存token
+                navigateTo(TabBarActivity.class);
             }
 
             @Override
