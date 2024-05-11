@@ -10,14 +10,17 @@ import android.widget.Toast;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-public class BaseActivity  extends AppCompatActivity {
+public abstract class BaseActivity  extends AppCompatActivity {
     public Context mContext;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mContext = this;
+        initData();
     }
+
+    protected abstract void initData();
 
     // 弹窗
     public void showToast(String msg){
@@ -36,6 +39,12 @@ public class BaseActivity  extends AppCompatActivity {
         startActivity(in);
     }
 
+    public void navigateToWithFlag(Class cls, int flags) {
+        Intent in = new Intent(mContext, cls);
+        in.setFlags(flags);
+        startActivity(in);
+    }
+
     //存值
     protected void saveStringToSp(String key,String val){
         SharedPreferences sp = getSharedPreferences("shaoting",MODE_PRIVATE);
@@ -43,5 +52,11 @@ public class BaseActivity  extends AppCompatActivity {
         editor.putString(key,val);
         editor.commit();
     }
+
+    protected String findByKey(String key) {
+        SharedPreferences sp = getSharedPreferences("shaoting", MODE_PRIVATE);
+        return sp.getString(key, "");
+    }
+
 
 }

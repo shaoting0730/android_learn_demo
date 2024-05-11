@@ -39,6 +39,11 @@ public class LoginActivity extends BaseActivity {
         });
     }
 
+    @Override
+    protected void initData() {
+
+    }
+
     private void login(String account, String pwd) {
         if (StringUtils.isEmpty(account)) {
 //            Toast.makeText(this, "请输入账号", Toast.LENGTH_LONG).show();
@@ -58,7 +63,7 @@ public class LoginActivity extends BaseActivity {
             public void onSuccess(String res) {
 //                showToastSync(res);
                 Log.i("成功", "onSuccess: "+res);
-                saveStringToSp("'token'","token_value");  // 存token
+                saveStringToSp("token","token_value");  // 存token
                 navigateTo(TabBarActivity.class);
             }
 

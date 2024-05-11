@@ -39,6 +39,11 @@ public class RegisterActivity extends BaseActivity {
         });
     }
 
+    @Override
+    protected void initData() {
+
+    }
+
     private void register(String account,String pwd,String pswAgain) {
         if (StringUtils.isEmpty(account)) {
             showToast("请输入账号");

@@ -4,12 +4,15 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
 import com.example.firstapp.activity.BaseActivity;
 import com.example.firstapp.activity.LoginActivity;
 import com.example.firstapp.activity.RegisterActivity;
+import com.example.firstapp.activity.TabBarActivity;
+import com.example.firstapp.util.StringUtils;
 
 public class MainActivity extends BaseActivity {
 
@@ -25,9 +28,6 @@ public class MainActivity extends BaseActivity {
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                Intent in = new Intent(MainActivity.this,
-//                        LoginActivity.class);
-//                startActivity(in);
                 navigateTo(LoginActivity.class);
             }
         });
@@ -42,5 +42,15 @@ public class MainActivity extends BaseActivity {
                 navigateTo(RegisterActivity.class);
             }
         });
+    }
+
+    @Override
+    protected void initData() {
+        boolean tag = StringUtils.isEmpty(findByKey("token"));
+        if (!tag) {
+            // 登录状态
+            navigateTo(TabBarActivity.class);
+            finish();
+        }
     }
 }

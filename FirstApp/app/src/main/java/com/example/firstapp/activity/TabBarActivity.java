@@ -9,8 +9,8 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.example.firstapp.R;
-import com.example.firstapp.fragment.HomeFragment;
-import com.example.firstapp.fragment.MineFragment;
+import com.example.firstapp.fragment.home.HomeFragment;
+import com.example.firstapp.fragment.mine.MineFragment;
 
 public class TabBarActivity extends BaseActivity implements View.OnClickListener {
     TextView tabHomeImg;
@@ -28,6 +28,11 @@ public class TabBarActivity extends BaseActivity implements View.OnClickListener
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tabbar);
         initTabBar();
+    }
+
+    @Override
+    protected void initData() {
+
     }
 
     private void initTabBar() {
