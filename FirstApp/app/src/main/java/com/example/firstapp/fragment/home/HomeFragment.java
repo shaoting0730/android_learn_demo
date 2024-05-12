@@ -8,10 +8,20 @@ import com.example.firstapp.fragment.BaseFragment;
 
 public class HomeFragment extends BaseFragment {
 
+
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_home, container, false);
+    protected void initData() {
+
+    }
+
+    @Override
+    protected int initLayout() {
+        return R.layout.fragment_home;
+    }
+
+    @Override
+    protected void initView() {
+
     }
 
 

@@ -4,6 +4,7 @@ package com.example.firstapp.fragment;
 import static android.content.Context.MODE_PRIVATE;
 
 import android.app.Fragment;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -15,9 +16,27 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 
+import com.example.firstapp.R;
+
 import org.jetbrains.annotations.Nullable;
 
 public abstract class BaseFragment extends Fragment {
+
+    protected View mRootView;
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        mRootView = inflater.inflate(initLayout(), container, false);
+        initView();
+        initData();
+        return mRootView;
+    }
+
+    protected abstract void initData();
+    protected abstract int initLayout();
+    protected abstract void initView();
+
     public void navigateToWithFlag(Class cls, int flags) {
         Intent in = new Intent(getActivity(), cls);
         in.setFlags(flags);
