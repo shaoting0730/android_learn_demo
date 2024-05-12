@@ -20,31 +20,6 @@ public class MainActivity extends BaseActivity {
     private Button btnRegister;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-
-        btnLogin = findViewById(R.id.btn_login);
-        btnLogin.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                navigateTo(LoginActivity.class);
-            }
-        });
-
-        btnRegister = findViewById(R.id.btn_register);
-        btnRegister.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-//                Intent in = new Intent(MainActivity.this,
-//                        RegisterActivity.class);
-//                startActivity(in);
-                navigateTo(RegisterActivity.class);
-            }
-        });
-    }
-
-    @Override
     protected void initData() {
         boolean tag = StringUtils.isEmpty(findByKey("token"));
         if (!tag) {
@@ -52,5 +27,30 @@ public class MainActivity extends BaseActivity {
             navigateTo(TabBarActivity.class);
             finish();
         }
+
+        btnLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                navigateTo(LoginActivity.class);
+            }
+        });
+
+        btnRegister.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                navigateTo(RegisterActivity.class);
+            }
+        });
+    }
+
+    @Override
+    protected int initLayout() {
+        return R.layout.activity_main;
+    }
+
+    @Override
+    protected void initView() {
+        btnLogin = findViewById(R.id.btn_login);
+        btnRegister = findViewById(R.id.btn_register);
     }
 }

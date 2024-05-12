@@ -17,25 +17,28 @@ public abstract class BaseActivity  extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mContext = this;
+        setContentView(initLayout());
+        initView();
         initData();
     }
 
     protected abstract void initData();
+    protected abstract int initLayout();
+    protected abstract void initView();
 
-    // 弹窗
-    public void showToast(String msg){
-        Toast.makeText(mContext,msg,Toast.LENGTH_SHORT).show();
+
+    public void showToast(String msg) {
+        Toast.makeText(mContext, msg, Toast.LENGTH_SHORT).show();
     }
-    // 主线程 弹窗
-    public void showToastSync(String msg){
+
+    public void showToastSync(String msg) {
         Looper.prepare();
-        Toast.makeText(mContext,msg,Toast.LENGTH_SHORT).show();
+        Toast.makeText(mContext, msg, Toast.LENGTH_SHORT).show();
         Looper.loop();
     }
 
-    // 跳转界面
-    public  void navigateTo(Class cls){
-        Intent in = new Intent(mContext,cls);
+    public void navigateTo(Class cls) {
+        Intent in = new Intent(mContext, cls);
         startActivity(in);
     }
 
@@ -45,16 +48,15 @@ public abstract class BaseActivity  extends AppCompatActivity {
         startActivity(in);
     }
 
-    //存值
-    protected void saveStringToSp(String key,String val){
-        SharedPreferences sp = getSharedPreferences("shaoting",MODE_PRIVATE);
+    protected void insertVal(String key, String val) {
+        SharedPreferences sp = getSharedPreferences("sp_ttit", MODE_PRIVATE);
         SharedPreferences.Editor editor = sp.edit();
-        editor.putString(key,val);
+        editor.putString(key, val);
         editor.commit();
     }
 
     protected String findByKey(String key) {
-        SharedPreferences sp = getSharedPreferences("shaoting", MODE_PRIVATE);
+        SharedPreferences sp = getSharedPreferences("sp_ttit", MODE_PRIVATE);
         return sp.getString(key, "");
     }
 

@@ -19,15 +19,9 @@ public class RegisterActivity extends BaseActivity {
     private EditText etPsw;
     private EditText etPswAgain;
     private Button btnRegister;
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_register);
-        etAccount = findViewById(R.id.et_account);
-        etPsw = findViewById(R.id.et_psw);
-        etPswAgain = findViewById(R.id.et_psw_again);
-        btnRegister = findViewById(R.id.btn_register);
 
+    @Override
+    protected void initData() {
         btnRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -40,8 +34,16 @@ public class RegisterActivity extends BaseActivity {
     }
 
     @Override
-    protected void initData() {
+    protected int initLayout() {
+        return R.layout.activity_register;
+    }
 
+    @Override
+    protected void initView() {
+        etAccount = findViewById(R.id.et_account);
+        etPsw = findViewById(R.id.et_psw);
+        etPswAgain = findViewById(R.id.et_psw_again);
+        btnRegister = findViewById(R.id.btn_register);
     }
 
     private void register(String account,String pwd,String pswAgain) {
@@ -76,8 +78,5 @@ public class RegisterActivity extends BaseActivity {
                 Log.i("失败", "onFail: "+e);
             }
         });
-
-
     }
-
 }

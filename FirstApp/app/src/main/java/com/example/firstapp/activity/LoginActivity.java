@@ -21,14 +21,9 @@ public class LoginActivity extends BaseActivity {
     private EditText etPsw;
     private Button btnLogin;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
-        etAccount = findViewById(R.id.et_account);
-        etPsw = findViewById(R.id.et_psw);
-        btnLogin = findViewById(R.id.btn_login);
 
+    @Override
+    protected void initData() {
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -40,8 +35,15 @@ public class LoginActivity extends BaseActivity {
     }
 
     @Override
-    protected void initData() {
+    protected int initLayout() {
+        return R.layout.activity_login;
+    }
 
+    @Override
+    protected void initView() {
+        etAccount = findViewById(R.id.et_account);
+        etPsw = findViewById(R.id.et_psw);
+        btnLogin = findViewById(R.id.btn_login);
     }
 
     private void login(String account, String pwd) {
@@ -63,7 +65,7 @@ public class LoginActivity extends BaseActivity {
             public void onSuccess(String res) {
 //                showToastSync(res);
                 Log.i("成功", "onSuccess: "+res);
-                saveStringToSp("token","token_value");  // 存token
+                insertVal("token","token_value");  // 存token
                 navigateTo(TabBarActivity.class);
             }
 

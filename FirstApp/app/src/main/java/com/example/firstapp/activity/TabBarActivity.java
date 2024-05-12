@@ -23,42 +23,37 @@ public class TabBarActivity extends BaseActivity implements View.OnClickListener
     HomeFragment homeFragment;
     MineFragment mineFragment;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_tabbar);
-        initTabBar();
-    }
 
     @Override
     protected void initData() {
-
-    }
-
-    private void initTabBar() {
-        tabHomeImg = findViewById(R.id.home_img);
-        tabHomeText = findViewById(R.id.home_text);
-        tabMineImg = findViewById(R.id.mine_img);
-        tabMineText = findViewById(R.id.mine_text);
         tabHomeImg.setBackgroundResource(R.mipmap.home_selected);
         tabHomeText.setTextColor(Color.rgb(0, 0, 255));
         tabMineText.setTextColor(Color.rgb(0, 0, 0));
 
-
         findViewById(R.id.home).setOnClickListener(this);
         findViewById(R.id.mine).setOnClickListener(this);
 
-
         homeFragment = new HomeFragment();
-
         fragmentManager = getFragmentManager();
         fragmentTransaction =
                 fragmentManager.beginTransaction();
         fragmentTransaction.replace(R.id.content_layout, homeFragment);
         fragmentTransaction.commit();
-
-
     }
+
+    @Override
+    protected int initLayout() {
+        return R.layout.activity_tabbar;
+    }
+
+    @Override
+    protected void initView() {
+        tabHomeImg = findViewById(R.id.home_img);
+        tabHomeText = findViewById(R.id.home_text);
+        tabMineImg = findViewById(R.id.mine_img);
+        tabMineText = findViewById(R.id.mine_text);
+    }
+
 
     @Override
     public void onClick(View view) {
