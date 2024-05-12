@@ -25,7 +25,7 @@ public abstract class BaseFragment extends Fragment {
     }
 
     protected void removeByKey(String key) {
-        SharedPreferences sp = getActivity().getSharedPreferences("shaoting",
+        SharedPreferences sp = getActivity().getSharedPreferences("shao_ting",
                 MODE_PRIVATE);
         SharedPreferences.Editor edit = sp.edit();
         edit.remove(key);
@@ -54,14 +54,14 @@ public abstract class BaseFragment extends Fragment {
     }
 
     protected void insertVal(String key, String val) {
-        SharedPreferences sp = getActivity().getSharedPreferences("sp_ttit", MODE_PRIVATE);
+        SharedPreferences sp = getActivity().getSharedPreferences("shao_ting", MODE_PRIVATE);
         SharedPreferences.Editor editor = sp.edit();
         editor.putString(key, val);
         editor.commit();
     }
 
     protected String findByKey(String key) {
-        SharedPreferences sp = getActivity().getSharedPreferences("sp_ttit", MODE_PRIVATE);
+        SharedPreferences sp = getActivity().getSharedPreferences("shao_ting", MODE_PRIVATE);
         return sp.getString(key, "");
     }
 
