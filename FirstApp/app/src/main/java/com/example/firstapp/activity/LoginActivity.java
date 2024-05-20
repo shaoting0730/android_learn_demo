@@ -1,6 +1,7 @@
 package com.example.firstapp.activity;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -66,7 +67,8 @@ public class LoginActivity extends BaseActivity {
 //                showToastSync(res);
                 Log.i("成功", "onSuccess: "+res);
                 insertVal("token","token_value");  // 存token
-                navigateTo(TabBarActivity.class);
+                navigateToWithFlag(TabBarActivity.class,
+                        Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
             }
 
             @Override
