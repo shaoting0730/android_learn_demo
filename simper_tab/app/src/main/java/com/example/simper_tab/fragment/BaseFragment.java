@@ -1,7 +1,7 @@
 package com.example.simper_tab.fragment;
 
 
-import android.app.Fragment;
+import androidx.fragment.app.Fragment;
 
 public class BaseFragment extends Fragment {
 
