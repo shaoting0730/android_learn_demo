@@ -1,12 +1,9 @@
 package com.example.firstapp.activity;
-
-
-import android.app.FragmentManager;
-import android.app.FragmentTransaction;
 import android.graphics.Color;
-import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import com.example.firstapp.R;
 import com.example.firstapp.fragment.home.HomeFragment;
@@ -34,7 +31,7 @@ public class TabBarActivity extends BaseActivity implements View.OnClickListener
         findViewById(R.id.mine).setOnClickListener(this);
 
         homeFragment = new HomeFragment();
-        fragmentManager = getFragmentManager();
+        fragmentManager = getSupportFragmentManager();
         fragmentTransaction =
                 fragmentManager.beginTransaction();
         fragmentTransaction.replace(R.id.content_layout, homeFragment);
