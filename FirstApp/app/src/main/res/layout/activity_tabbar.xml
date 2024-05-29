@@ -1,77 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
-    tools:context=".MainActivity">
+    android:background="@color/colorPrimaryDark"
+    tools:context=".activity.TabBarActivity">
 
-    <RelativeLayout
-        android:id="@+id/content_layout"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        >
-    </RelativeLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_alignParentBottom="true"
-        android:background="@drawable/border_with_top_line"
-        >
-
-        <RelativeLayout
-            android:id="@+id/home"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:layout_weight="1"
-            >
-            <TextView
-                android:id="@+id/home_img"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:background="@mipmap/home_selected"
-                />
-
-            <TextView
-                android:id="@+id/home_text"
-                android:layout_width="30dp"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/home_img"
-                android:gravity="center"
-                android:text="@string/home_tabBar_title" />
-
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:id="@+id/mine"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:layout_weight="1"
-            >
-            <TextView
-                android:id="@+id/mine_img"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:background="@mipmap/mine_unselect"
-                />
-            <TextView
-                android:id="@+id/mine_text"
-                android:layout_below="@id/mine_img"
-                android:layout_width="30dp"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="@string/mine_tabBar_title"
-                />
-
-        </RelativeLayout>
+    <TextView
+        android:gravity="center"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:text="首页" />
 
 
-
-    </LinearLayout>
-
-
-</RelativeLayout>
+</LinearLayout>
